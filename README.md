@@ -16,12 +16,16 @@
 Data ingestion — Data is received from data sources to either a Landing Zone (LZ) or introduced into a streaming pipeline.
 
 **Data Orchestration**:
-- **ETL**: AWS MWAA to clea.
-- **Real-time Processing**: AWS MKS.
+- **Process Raw Data**:  Using AWS Step Functions and AWS MWAA to pick up data from the "Raw Zone" and move into the pipline for processing
+- **Real-time Processing**: AWS Kenisis AWS MKS for real-time data which is inventory data in this use case. Inventory must be real-time so fulfilment and replenishment
+                            can be achieved.
 
-**Data Delivery**:
-- **BI Tools**: Tableau for visualization and reporting.
-- **Machine Learning**: TensorFlow for predictive analytics.
+**Data Processing (ETL)**:
+- **AWS Glue Streaming**: Uses AWS Glue streaming to process (ETL) data comming in from MKS and Kenisis.
+- **AWS Glue Jobs**: Schedule ETL Jobs.
+- **AWS Glue Databrew**: A data preparation tool that makes it easier for data analysts and data scientists to clean and normalize data.
+- **AWS Glue Catalog**: Stores metadata related to data sources, data transformations, and resulting data sets. This includes table definitions,
+                        job definitions, and other related metadata. Provides "crawlers" that can infer data schemas from ODBC, JDBC, S3 data sources.
 
 **Exception and Error Handling**:
 - **Monitoring**: Prometheus and Grafana for monitoring the health of the pipeline.
