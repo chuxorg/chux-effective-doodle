@@ -54,4 +54,3 @@ Data ingestion — Data is received from data sources to either a Landing Zone (
 - **Data Processing**: Batch and real-time data processing capabilities.
 - **Data Delivery**: Tools for both visualization and advanced analytics.
 
-To visualize this architecture, you can use tools like Lucidchart, draw.io, or Microsoft Visio. Use boxes to represent each component and arrows to show data flow. Make sure to highlight error handling and exception paths.
